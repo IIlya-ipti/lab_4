@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 const char* filename = "input.txt";
-static char* BUFFER = new char[1000];
 
 struct Point {
     int x;
