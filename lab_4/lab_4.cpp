@@ -26,12 +26,12 @@ void file_to_matrix(FILE* f, Matrix*x) {
     int columns = 0;
     while (fscanf(f, "%c", &c) != -1) {
         if (c == '\n') {
-            x->columns = columns;
             columns = -1;
             lines++;
         }
         columns++;
     }
+    x->columns = columns;
     x->lines = lines + 1;
     x->matrix = new unsigned* [x->lines];
     for (int i = 0; i < x->lines; i++) {
