@@ -94,6 +94,9 @@ void PrintSolve(Matrix& x) {
             if (x.matrix[i][j] == 0) {
                 cout << "   ";
             }
+            if (x.matrix[i][j] == 4) {
+                cout << " ? ";
+            }
         }
         cout << endl;
     }
@@ -113,8 +116,9 @@ int main()
     file_to_matrix(file, &matrix);
     if (matrix.matrix[x.y][x.x] == 1) { cout << "is not empty!" << endl; }
     else {
-        matrix.matrix[x.y][x.x] = 1;
+        matrix.matrix[x.y][x.x] = 4;
         solve(matrix, x);
+        matrix.matrix[x.y][x.x] = 4;
         PrintSolve(matrix);
     }
     return 0;
