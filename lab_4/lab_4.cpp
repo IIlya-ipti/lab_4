@@ -114,6 +114,10 @@ int main()
     char h;
     cin >> x.x >> x.y;
     file_to_matrix(file, &matrix);
+    if ((x.y > matrix.lines) || (matrix.columns < x.x)) {
+        cout << "x,y values it's so big" << endl;
+        exit(1);
+    }
     if (matrix.matrix[x.y][x.x] == 1) { cout << "is not empty!" << endl; }
     else {
         matrix.matrix[x.y][x.x] = 4;
