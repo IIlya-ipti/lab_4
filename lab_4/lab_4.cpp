@@ -3,6 +3,13 @@
 using namespace std;
 const char* filename = "input.txt";
 
+struct Point;
+struct Matrix;
+void file_to_matrix(FILE*, Matrix*); //считывание матрицы из файла
+bool solve(Matrix& , Point); // решение задачи (по сути преобразование матрицы к решению)
+void PrintSolve(Matrix&); // вывод на экран решения
+
+
 struct Point {
     int x;
     int y;
